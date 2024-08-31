@@ -52,6 +52,12 @@ public partial class DashboardControl
         trackingController?.LiveStatsTracker?.Reset();
     }
 
+    private void BtnAchievementInfo_Click(object sender, RoutedEventArgs e)
+    {
+        var trackingController = ServiceLocator.Resolve<TrackingController>();
+        Clipboard.SetText(trackingController.EntityController.AchievementData);
+    }
+
     private void OpenDashboardWindow_MouseUp(object sender, MouseButtonEventArgs e)
     {
         OpenDashboardWindow();

@@ -29,6 +29,7 @@ public class EntityController
     private readonly TrackingController _trackingController;
 
     public LocalUserData LocalUserData { get; init; } = new();
+    public string AchievementData { get; set; } = "{}";
 
     public EntityController(TrackingController trackingController, MainWindowViewModel mainWindowViewModel)
     {

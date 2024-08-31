@@ -61,6 +61,7 @@
                                             Width="237" Height="26" Click="BtnTrackingReset_Click" />
                                 </DockPanel>
                             </Grid>
+                            <Button Content="{Binding Translation.CopyAchievementInfo, FallbackValue=COPY__ACHIEVEMENT__INFO}" Width="237" Height="26" Click="BtnAchievementInfo_Click" />
                             <CheckBox IsChecked="{Binding IsTrackingResetByMapChangeActive}" Content="{Binding Translation.MapChangeReset, FallbackValue=MAP__CHANGE__RESET}"/>
                         </StackPanel>
                         <Grid Height="20" Width="20" Margin="5,3,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" 

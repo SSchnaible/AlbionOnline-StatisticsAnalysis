@@ -1,4 +1,7 @@
-﻿using PhotonPackageParser;
+﻿using System.Diagnostics;
+using System.Net.Sockets;
+using System.Text.Json;
+using PhotonPackageParser;
 
 namespace StatisticsAnalysisTool.Network;
 
@@ -27,6 +30,8 @@ internal sealed class AlbionParser : PhotonParser, IPhotonReceiver
 
         var eventPacket = new EventPacket(eventCode, parameters);
 
+        //Debug.Print($"Event with event code {eventPacket.EventCode}: {JsonSerializer.Serialize(eventPacket.Parameters)}");
+
         _ = _handlers.HandleAsync(eventPacket);
     }
 
@@ -52,8 +57,9 @@ internal sealed class AlbionParser : PhotonParser, IPhotonReceiver
         {
             return;
         }
-
         var responsePacket = new ResponsePacket(operationCode, parameters);
+
+        //Debug.Print($"Response with operation code {responsePacket.OperationCode}: {JsonSerializer.Serialize(responsePacket.Parameters)}");
 
         _ = _handlers.HandleAsync(responsePacket);
     }
