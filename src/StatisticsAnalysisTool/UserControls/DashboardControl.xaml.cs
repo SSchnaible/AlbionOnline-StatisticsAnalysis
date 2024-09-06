@@ -55,7 +55,7 @@ public partial class DashboardControl
     private void BtnAchievementInfo_Click(object sender, RoutedEventArgs e)
     {
         var trackingController = ServiceLocator.Resolve<TrackingController>();
-        Clipboard.SetText(trackingController.EntityController.AchievementData);
+        Clipboard.SetText(trackingController.EntityController.AchievementInfo.ToJson());
     }
 
     private void OpenDashboardWindow_MouseUp(object sender, MouseButtonEventArgs e)

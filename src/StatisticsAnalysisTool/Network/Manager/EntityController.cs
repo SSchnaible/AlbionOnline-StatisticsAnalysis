@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using StatisticsAnalysisTool.DamageMeter;
+using StatisticsAnalysisTool.Network.Events;
 
 namespace StatisticsAnalysisTool.Network.Manager;
 
@@ -29,7 +30,7 @@ public class EntityController
     private readonly TrackingController _trackingController;
 
     public LocalUserData LocalUserData { get; init; } = new();
-    public string AchievementData { get; set; } = "{}";
+    public FullAchievementInfo AchievementInfo { get; set; } = new FullAchievementInfo();
 
     public EntityController(TrackingController trackingController, MainWindowViewModel mainWindowViewModel)
     {

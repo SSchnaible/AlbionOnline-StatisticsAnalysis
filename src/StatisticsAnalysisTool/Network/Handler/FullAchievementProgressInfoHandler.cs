@@ -4,16 +4,16 @@ using System.Threading.Tasks;
 
 namespace StatisticsAnalysisTool.Network.Handler;
 
-public class FullAchievementInfoHandler : EventPacketHandler<FullAchievementInfoEvent>
+public class FullAchievementProgressInfoHandler : EventPacketHandler<FullAchievementProgressInfoEvent>
 {
     private readonly TrackingController _trackingController;
 
-    public FullAchievementInfoHandler(TrackingController trackingController) : base((int) EventCodes.FullAchievementInfo)
+    public FullAchievementProgressInfoHandler(TrackingController trackingController) : base((int) EventCodes.FullAchievementProgressInfo)
     {
         _trackingController = trackingController;
     }
 
-    protected override async Task OnActionAsync(FullAchievementInfoEvent value)
+    protected override async Task OnActionAsync(FullAchievementProgressInfoEvent value)
     {
         _trackingController.EntityController.AchievementInfo.Merge(value);
 

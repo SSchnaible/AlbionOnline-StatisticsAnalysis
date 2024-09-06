@@ -34,6 +34,7 @@ public class NetworkManager
         ReceiverBuilder builder = ReceiverBuilder.Create();
 
         // Event
+        builder.AddEventHandler(new FullAchievementProgressInfoHandler(trackingController));
         builder.AddEventHandler(new FullAchievementInfoHandler(trackingController));
         builder.AddEventHandler(new NewEquipmentItemEventHandler(trackingController));
         builder.AddEventHandler(new NewSimpleItemEventHandler(trackingController));
